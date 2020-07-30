@@ -1,1 +1,1 @@
-export { default as systemInfo } from './systemInfo';
+export { pasteToImage } from './pasteImage';

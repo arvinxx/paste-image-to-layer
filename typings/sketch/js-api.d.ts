@@ -467,6 +467,8 @@ declare module 'sketch/dom' {
 
     export type AllLayers = ChildLayer | Artboard | Page | SymbolMaster;
 
+    export type ShapeType = Shape | ShapePath;
+
     class BaseGroup<
       NativeType extends MSLayerGroup = MSLayerGroup
     > extends StyledLayer<NativeType> {
@@ -1659,8 +1661,16 @@ declare module 'sketch/dom' {
        * Whether the fill is active or not.
        */
       enabled?: boolean;
+      pattern?: Pattern;
     }
-
+    /**
+     * Image Fill Style
+     */
+    export interface Pattern {
+      patternType: 'Fill';
+      tileScale: number;
+      image: ImageData;
+    }
     /**
      * An object that represent a Border.
      */

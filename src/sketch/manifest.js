@@ -1,7 +1,5 @@
-const name =
-  'Sketch Plugin Template' + process.env.NODE_ENV === 'development'
-    ? ' DEV'
-    : '';
+const name = 'Paste Image To Shape Layer';
+
 module.exports = {
   compatibleVersion: 3,
   bundleVersion: 1,
@@ -10,20 +8,20 @@ module.exports = {
     'https://github.com/arvinxx/sketch-plugin-skpm-umi-typescript-example',
   identifier:
     process.env.NODE_ENV === 'development'
-      ? 'sketch-plugin-template.dev'
-      : 'sketch-plugin-template',
+      ? 'paste-image-to-layer.dev'
+      : 'paste-image-to-layer',
 
   icon: 'icons/logo.png',
   commands: [
     {
-      name: 'Plugin Info',
-      identifier: 'sketch-plugin-template.system-info',
+      name: 'Paste Image To Layer',
+      identifier: 'paste-image-to-layer.paset',
       script: './app.ts',
-      handler: 'systemInfo',
+      handler: 'pasteToImage',
     },
   ],
   menu: {
     title: name,
-    items: ['-', 'sketch-plugin-template.system-info'],
+    items: ['paste-image-to-layer.paset'],
   },
 };
